@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Tableau de bord GMB</title>
+</head>
+<body>
+<h1>Vos fiches Google Business</h1>
+<table border="1">
+<tr><th>Nom</th><th>ID</th><th>Adresse</th></tr>
+{% for loc in locations %}
+<tr>
+    <td>{{ loc.title }}</td>
+    <td>{{ loc.name }}</td>
+    <td>{{ loc.storefrontAddress.addressLines | default([]) | join(', ') }}</td>
+</tr>
+{% endfor %}
+</table>
+</body>
+</html>
