@@ -5,14 +5,16 @@ Cette application Flask permet de se connecter à l'API Google Business Profile 
 ## Installation
 
 1. Créez un projet Google Cloud et activez l'API *Google Business Profile*.
-2. Configurez un identifiant OAuth 2.0 de type "Application Web" et téléchargez le fichier `client_secret.json` à placer à la racine du projet. Vous pouvez aussi définir les variables d'environnement `GOOGLE_CLIENT_ID` et `GOOGLE_CLIENT_SECRET` à la place du fichier.
-3. Installez les dépendances :
+2. Configurez un identifiant OAuth 2.0 de type "Application Web" et téléchargez le fichier `client_secret.json` à placer à la racine du projet. Vous pouvez aussi définir les variables d'environnement `GOOGLE_CLIENT_ID` et `GOOGLE_CLIENT_SECRET` ou renseigner ces valeurs dans le fichier `credentials.env` fourni.
+3. Éditez le fichier `credentials.env` en renseignant vos identifiants.
+   Les valeurs seront chargées automatiquement au démarrage de l'application.
+4. Installez les dépendances :
 
 ```bash
 pip install -r requirements.txt
 ```
 
-4. Lancez l'application :
+5. Lancez l'application :
 
 ```bash
 python app/app.py

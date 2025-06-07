@@ -6,6 +6,19 @@ from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import Flow
 from googleapiclient.discovery import build
 
+
+def load_credentials(filename='credentials.env'):
+    if os.path.exists(filename):
+        with open(filename) as f:
+            for line in f:
+                if '=' in line:
+                    key, val = line.strip().split('=', 1)
+                    if key and val and not os.environ.get(key):
+                        os.environ[key] = val
+
+
+load_credentials()
+
 app = Flask(__name__)
 app.secret_key = os.environ.get('FLASK_SECRET', 'change-me')
 
